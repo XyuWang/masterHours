@@ -33,6 +33,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+
 group :development, :test do 
   gem 'factory_girl'
   gem 'factory_girl_rails'

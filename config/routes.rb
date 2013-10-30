@@ -4,5 +4,7 @@ MasterHours::Application.routes.draw do
 
   resources :projects do
     resources :work_days
+    get "chart/show"
   end
+
 end

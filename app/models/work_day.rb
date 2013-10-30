@@ -1,4 +1,6 @@
 class WorkDay < ActiveRecord::Base
-  attr_accessible :minutes
+  default_scope order('time')
+
   belongs_to :project
+  validates :time, presence: true
 end

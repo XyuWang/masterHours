@@ -1,2 +1,30 @@
-<h1>Projects#show</h1>
-<p>Find me in app/views/projects/show.html.erb</p>
+<div class="container">
+  你花费的总时间:<%= @project.total_hours %>
+<div id="chart"></div>
+
+<div class="well">
+  <div id="datetimepicker4" class="input-append">
+    <input data-format="yyyy-MM-dd" type="text"></input>
+    <span class="add-on">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+    </span>
+  </div>
+</div>
+
+</div>
+
+<script>
+  $(document).ready(function(){
+    $.ajax({
+      type: "GET",
+      url: "<%= project_chart_show_path(@project) %>",
+    });
+
+
+    $('#datetimepicker4').datetimepicker({
+      pickTime: false
+    });
+  });
+</script>
+
+
